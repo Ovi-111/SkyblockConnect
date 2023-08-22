@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/test"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    tools:context=".SettingsActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/DataScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/go_back_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+
+                android:paddingLeft="10dp"
+
+                android:paddingTop="10dp"
+                android:paddingRight="10dp"
+                android:weightSum="100"
+
+
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/go_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/bariol_bold"
+                    android:text="Go Back"
+                    android:textColor="@color/white"
+                    app:icon="@drawable/baseline_arrow_back_ios_24"
+                    app:iconTint="@color/white" />
+
+
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:layout_marginHorizontal="4sp"
+                android:layout_marginVertical="4sp"
+                android:foreground="?selectableItemBackground"
+                app:cardBackgroundColor="?attr/cardBackgroundColor"
+                app:cardCornerRadius="5dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/go_back_layout">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="8dp">
+
+                    <TextView
+                        android:id="@+id/UsernameTitleText"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Set Username"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        app:layout_constraintEnd_toStartOf="@id/username_set"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/UsernameDescriptionText"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Username is needed for auctions."
+                        android:textColor="#90212121"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/username_set"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/UsernameTitleText" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/username_set"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/colorPrimaryDark"
+                        android:text="NAME"
+                        android:textColor="@color/white"
+                        app:icon="@drawable/baseline_perm_identity_24"
+                        app:iconTint="@color/white"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/AuctionNotifier"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:layout_marginHorizontal="4sp"
+                android:layout_marginVertical="4sp"
+                android:foreground="?selectableItemBackground"
+                app:cardBackgroundColor="?attr/cardBackgroundColor"
+                app:cardCornerRadius="5dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/username">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="8dp">
+
+                    <TextView
+                        android:id="@+id/AHNotifierTitleText"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="User Auction Notifier"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        app:layout_constraintEnd_toStartOf="@id/AHNotifierToggle"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/AHNotifierDescriptionText"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Get notified when your auctions get sold."
+                        android:textColor="#90212121"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/AHNotifierToggle"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/AHNotifierTitleText" />
+
+                    <androidx.appcompat.widget.AppCompatToggleButton
+                        android:id="@+id/AHNotifierToggle"
+                        android:layout_width="123dp"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/colorPrimaryDark"
+                        android:textColor="@color/white"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/foregroundDelayCardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:layout_marginHorizontal="4sp"
+                android:layout_marginVertical="4sp"
+                android:foreground="?selectableItemBackground"
+                app:cardBackgroundColor="?attr/cardBackgroundColor"
+                app:cardCornerRadius="5dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/AuctionNotifier">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="8dp">
+
+                    <TextView
+                        android:id="@+id/foregroundDelayTitleText"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Check auctions delay"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        app:layout_constraintEnd_toStartOf="@id/foregroundDelayTextInputLayout"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/foregroundDelayDescriptionText"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Delay for checking auctions."
+                        android:textColor="#90212121"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/foregroundDelayTextInputLayout"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/foregroundDelayTitleText" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/foregroundDelayTextInputLayout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+                        android:layout_width="145dp"
+                        android:layout_height="40dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/foregroundDelay"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@color/colorPrimaryDark"
+                            android:inputType="none"
+                            android:paddingTop="10dp"
+                            android:textColor="@color/white"
+                            android:textSize="16sp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/Discord"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:layout_marginHorizontal="4sp"
+                android:layout_marginVertical="4sp"
+                android:foreground="?selectableItemBackground"
+                app:cardBackgroundColor="?attr/cardBackgroundColor"
+                app:cardCornerRadius="5dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/foregroundDelayCardView">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="8dp">
+
+                    <TextView
+                        android:id="@+id/DiscordText"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Join discord."
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        app:layout_constraintEnd_toStartOf="@id/DiscordButton"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/DiscordDescriptionText"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Get latest updates in discord."
+                        android:textColor="#90212121"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/DiscordButton"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/DiscordText" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/DiscordButton"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/colorPrimaryDark"
+                        android:text="JOIN"
+                        android:textColor="@color/white"
+                        app:icon="@drawable/baseline_discord_24"
+                        app:iconTint="@color/white"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</RelativeLayout>
+
+
+

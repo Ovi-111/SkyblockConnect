@@ -1,0 +1,44 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="Theme.SkyblockConnect" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+
+        <!-- Use a light background color instead of a dark one -->
+        <item name="android:windowBackground">#000000</item>
+
+        <item name="android:fontFamily">@font/bariol_bold</item>
+
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">#242424</item>
+        <item name="colorPrimaryVariant">#000000</item>
+        <item name="colorOnPrimary">#fafafa</item>
+        <item name="colorPrimaryContainer">#383838</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">#808080</item>
+        <!-- Customize your theme here. -->
+
+        <item name="cardBackgroundColor">#999999</item>
+
+    </style>
+
+    <style name="Theme.SkyblockConnect.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.SkyblockConnect.PopupOverlay" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="SearchViewTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="searchViewStyle">@style/CustomSearchViewStyle</item>
+    </style>
+
+    <style name="CustomSearchViewStyle" parent="Widget.AppCompat.SearchView">
+        <!-- Customize the background color and hint text color -->
+        <item name="android:background">@drawable/search_view_bg</item>
+        <item name="android:textColorHint">@color/black</item>
+
+        <!-- Customize the search icon and close icon -->
+        <item name="searchIcon">@drawable/baseline_search_24</item>
+        <item name="closeIcon">@drawable/baseline_close_24</item>
+
+    </style>
+
+</resources>

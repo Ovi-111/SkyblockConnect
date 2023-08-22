@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BazaarFragment">
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/search_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:iconifiedByDefault="false"
+        android:queryHint="Search..."
+        android:theme="@style/SearchViewTheme"
+        app:iconifiedByDefault="false"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:searchHintIcon="@drawable/baseline_search_24" />
+
+    <Spinner
+        android:id="@+id/bazaarSpinner"
+        style="@style/Widget.AppCompat.DropDownItem.Spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:dropDownVerticalOffset="25dp"
+        android:entries="@array/sort_by"
+        android:spinnerMode="dropdown"
+        app:layout_constraintBottom_toTopOf="@id/bz_item_list_recyclerview"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_view" />
+
+    <Spinner
+        android:id="@+id/bazaarSortSpinner"
+        style="@style/Widget.AppCompat.DropDownItem.Spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:dropDownVerticalOffset="25dp"
+        android:entries="@array/asc_desc_array"
+        android:spinnerMode="dropdown"
+        app:layout_constraintBottom_toTopOf="@id/bz_item_list_recyclerview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_view" />
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="5sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bazaarSpinner">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/bz_item_list_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="5sp" />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+    <TextView
+        android:id="@+id/empty_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Nothing to show here."
+        android:textColor="?attr/colorOnPrimary"
+        android:textSize="22sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/loading_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:indeterminateTint="?attr/colorOnPrimary"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

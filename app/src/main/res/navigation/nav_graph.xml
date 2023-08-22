@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/MainFragment">
+
+    <fragment
+        android:id="@+id/MainFragment"
+        android:name="com.ovi.skyblockconnect.MainFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_main">
+
+        <action
+            android:id="@+id/action_MainFragment_to_AuctionFragment"
+            app:destination="@id/AuctionFragment" />
+        <action
+            android:id="@+id/action_MainFragment_to_BazaarFragment"
+            app:destination="@id/BazaarFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/AuctionFragment"
+        android:name="com.ovi.skyblockconnect.AuctionFragment"
+        android:label="Auctions"
+        tools:layout="@layout/fragment_auction">
+        <action
+            android:id="@+id/action_MainFragment_to_MainFragment"
+            app:destination="@id/MainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/BazaarFragment"
+        android:name="com.ovi.skyblockconnect.BazaarFragment"
+        android:label="Bazaar"
+        tools:layout="@layout/fragment_bazaar">
+        <action
+            android:id="@+id/action_BazaarFragment_to_MainFragment"
+            app:destination="@id/MainFragment" />
+    </fragment>
+</navigation>

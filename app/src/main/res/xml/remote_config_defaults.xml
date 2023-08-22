@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<defaults>
+  <entry>
+    <key>new_version_code</key>
+    <value>5</value>
+  </entry>
+  <entry>
+    <key>discord_url</key>
+    <value></value>
+  </entry>
+  <entry>
+    <key>API_KEY</key>
+    <value></value>
+  </entry>
+</defaults>

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_minecraft_item"
+    android:maxHeight="600dp"
+    android:paddingHorizontal="24dp"
+    android:paddingVertical="18dp">
+
+    <!-- Item Name -->
+    <TextView
+        android:id="@+id/item_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/minecraft_font"
+        android:gravity="start"
+        android:text="Name"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@id/item_lore_scrollview"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/item_lore_scrollview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/auction_details"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_max="350dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/item_name">
+
+        <TextView
+            android:id="@+id/item_lore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/minecraft_font"
+            android:paddingRight="30dp"
+            android:textColor="@color/white"
+            android:textSize="10dp" />
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/auction_details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="7dp"
+        android:fontFamily="@font/minecraft_font"
+        app:layout_constraintBottom_toTopOf="@id/dismiss_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/item_lore_scrollview">
+        <!-- Price TextView -->
+        <TextView
+            android:id="@+id/item_price_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/minecraft_font"
+            android:gravity="start"
+            android:paddingTop="5dp"
+            android:text="Price: "
+            android:textColor="#949494"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toTopOf="@id/remaining_time_text"
+            app:layout_constraintEnd_toStartOf="@id/item_price"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/item_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/minecraft_font"
+            android:text="0"
+            android:textColor="@color/dark_orange"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="@id/item_price_text"
+            app:layout_constraintStart_toEndOf="@id/item_price_text"
+            app:layout_constraintTop_toTopOf="@id/item_price_text" />
+
+        <!--Remaining Time-->
+        <TextView
+            android:id="@+id/remaining_time_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/minecraft_font"
+            android:gravity="start"
+            android:text="End: "
+            android:textColor="#949494"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toTopOf="@id/auctioneer"
+            app:layout_constraintEnd_toStartOf="@id/remaining_time"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/item_price_text" />
+
+        <TextView
+            android:id="@+id/remaining_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/minecraft_font"
+            android:text="Ended"
+            android:textColor="#b3b33c"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="@id/remaining_time_text"
+            app:layout_constraintStart_toEndOf="@id/remaining_time_text"
+            app:layout_constraintTop_toTopOf="@id/remaining_time_text" />
+
+
+        <!-- Seller-->
+        <TextView
+            android:id="@+id/auctioneer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/minecraft_font"
+            android:text="Seller: "
+            android:textColor="#949494"
+            android:textSize="14sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/auctioneer_username"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/remaining_time_text" />
+
+        <TextView
+            android:id="@+id/auctioneer_username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/minecraft_font"
+            android:shadowColor="@color/light_orange_shade"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="1.5"
+            android:textColor="@color/light_sea_green"
+            android:textSize="13sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/auctioneer"
+            app:layout_constraintStart_toEndOf="@id/auctioneer"
+            app:layout_constraintTop_toTopOf="@id/auctioneer" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/dismiss_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/design_default_color_secondary"
+        android:fontFamily="@font/minecraft_font"
+        android:paddingHorizontal="30dp"
+        android:text="@string/dismiss"
+        android:textSize="13dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/auction_details" />
+</androidx.constraintlayout.widget.ConstraintLayout>
